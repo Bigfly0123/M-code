@@ -44,3 +44,11 @@ htmlcov/
 site/
 docs/_build/
 \n# Allow example data\n!examples/*.jsonl
+
+# Allow clean training data
+!data/*.jsonl
+!data/*.json
+!data/splits/*.txt
+
+# Allow documentation
+!docs/*.md

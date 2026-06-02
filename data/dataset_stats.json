@@ -1,0 +1,14 @@
+{
+  "total_traces": 1854,
+  "success_traces": 1731,
+  "failed_traces": 123,
+  "sft_clean": 990,
+  "sft_rejected": 741,
+  "reject_reasons": {
+    "bad_pattern:Missing required argument": 320,
+    "no_submit_patch": 351,
+    "bad_pattern:Old text not found": 9,
+    "no_edit_file": 37,
+    "no_run_tests": 24
+  }
+}
