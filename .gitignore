@@ -43,3 +43,4 @@ htmlcov/
 # Documentation builds
 site/
 docs/_build/
+\n# Allow example data\n!examples/*.jsonl
