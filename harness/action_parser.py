@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 
 from evocode_orchard_lite.schema import Action
 
@@ -10,6 +11,15 @@ class ActionParseError(ValueError):
 
 
 def parse_action(response: str) -> Action:
+    # Strip markdown code blocks if present
+    response = response.strip()
+    if response.startswith("```"):
+        # Remove ```json or ``` at start
+        response = re.sub(r'^```(?:json)?\s*\n?', '', response)
+        # Remove ``` at end
+        response = re.sub(r'\n?```\s*$', '', response)
+        response = response.strip()
+    
     try:
         payload = json.loads(response)
     except json.JSONDecodeError as exc:

@@ -81,10 +81,11 @@ Available tools:
 {tool_desc}
 
 IMPORTANT RULES:
-1. Respond with exactly one JSON object
+1. Respond with exactly one JSON object, NO markdown formatting, NO code blocks
 2. For edit_file, you MUST provide all three parameters: "path", "old", "new"
 3. The "old" text must be EXACTLY as it appears in the file
 4. Always run tests before submitting
+5. DO NOT use ```json or ``` blocks, just raw JSON
 
 Response format:
 {{"thought": "...", "action": "tool_name", "arguments": {{...}}}}
