@@ -10,7 +10,7 @@ from evocode_orchard_lite.tools.path_utils import resolve_workspace_path
 
 def list_files(task: Task, arguments: dict) -> ToolResult:
     root = resolve_workspace_path(task.workspace, arguments.get("path", "."))
-    files = [str(path.relative_to(task.workspace)) for path in sorted(root.rglob("*")) if path.is_file()]
+    files = [str(path.relative_to(task.workspace.resolve())) for path in sorted(root.rglob("*")) if path.is_file()]
     return ToolResult(True, "\n".join(files), {"files": files})
 
 
@@ -18,7 +18,7 @@ def read_file(task: Task, arguments: dict) -> ToolResult:
     if "path" not in arguments:
         return ToolResult(False, "Missing required argument: 'path'", {"failure_type": "FORMAT_ERROR"})
     path = resolve_workspace_path(task.workspace, arguments["path"])
-    return ToolResult(True, path.read_text(encoding="utf-8"), {"path": str(path.relative_to(task.workspace))})
+    return ToolResult(True, path.read_text(encoding="utf-8"), {"path": str(path.relative_to(task.workspace.resolve()))})
 
 
 def search_code(task: Task, arguments: dict) -> ToolResult:
@@ -30,7 +30,7 @@ def search_code(task: Task, arguments: dict) -> ToolResult:
         text = path.read_text(encoding="utf-8", errors="replace")
         for line_no, line in enumerate(text.splitlines(), start=1):
             if keyword in line:
-                matches.append(f"{path.relative_to(task.workspace)}:{line_no}: {line}")
+                matches.append(f"{path.relative_to(task.workspace.resolve())}:{line_no}: {line}")
     return ToolResult(True, "\n".join(matches) or "No matches.", {"matches": matches})
 
 
@@ -57,8 +57,8 @@ def _workspace_diff(task: Task) -> str:
     original_root = task.task_dir / "repo"
     chunks: list[str] = []
     rel_paths = sorted(
-        {path.relative_to(original_root) for path in original_root.rglob("*.py")}
-        | {path.relative_to(task.workspace) for path in task.workspace.rglob("*.py")}
+        {path.relative_to(original_root) for path in original_root.resolve().rglob("*.py")}
+        | {path.relative_to(task.workspace.resolve()) for path in task.workspace.resolve().rglob("*.py")}
     )
     for rel in rel_paths:
         original = original_root / rel
