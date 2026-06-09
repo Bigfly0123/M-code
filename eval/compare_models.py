@@ -119,8 +119,8 @@ def main():
     models = {
         "3B Base": root / "eval_3b_base",
         "3B Old-SFT": root / "eval_sft",
-        "3B Step-SFT v1": root / "eval_3b_step_sft",
         "3B Step-SFT v2": root / "eval_3b_step_sft_v2",
+        "3B v2+Guard": root / "eval_3b_step_sft_v2_guard",
         "7B Base": root / "eval_7b",
     }
     

@@ -3,6 +3,7 @@ from __future__ import annotations
 from evocode_orchard_lite.eval.reward import evaluate_trace
 from evocode_orchard_lite.harness.action_parser import ActionParseError, parse_action
 from evocode_orchard_lite.harness.format_error_handler import FormatErrorHandler
+from evocode_orchard_lite.harness.progress_guard import ProgressGuard
 from evocode_orchard_lite.harness.prompt_builder import PromptBuilder
 from evocode_orchard_lite.schema import Step, Task, Trace
 from evocode_orchard_lite.tools.registry import ToolRegistry
@@ -19,6 +20,7 @@ class AgentLoop:
         max_steps: int = 8,
         max_format_retries: int = 3,
         auto_save: bool = True,
+        use_guard: bool = True,
     ):
         self.model = model
         self.tools = tools
@@ -27,6 +29,8 @@ class AgentLoop:
         self.max_steps = max_steps
         self.format_handler = FormatErrorHandler(max_retries=max_format_retries)
         self.auto_save = auto_save
+        self.use_guard = use_guard
+        self.guard = ProgressGuard() if use_guard else None
 
     def run(self, task: Task) -> Trace:
         trace = Trace(task_id=task.task_id, model=getattr(self.model, "name", self.model.__class__.__name__))
@@ -52,6 +56,14 @@ class AgentLoop:
                     history.append(step)
                     continue
 
+            # Apply progress guard
+            if self.use_guard and self.guard:
+                allowed, message = self.guard.check(task, history, action.name, action.arguments)
+                if not allowed:
+                    # Add guard message as observation, but still execute the action
+                    # The guard message will be visible in the trace
+                    pass
+
             if action.name == "submit_patch":
                 trace.steps.append(
                     Step(
@@ -70,11 +82,19 @@ class AgentLoop:
                 from evocode_orchard_lite.schema import ToolResult
 
                 result = ToolResult(False, f"Tool error: {exc}", {"failure_type": "TOOL_ERROR"})
+            
+            # Add guard message to observation if applicable
+            observation = result.observation
+            if self.use_guard and self.guard:
+                allowed, guard_message = self.guard.check(task, history, action.name, action.arguments)
+                if not allowed:
+                    observation = f"[Guard] {guard_message}\n\n{observation}"
+            
             step = Step(
                 step=step_no,
                 thought=action.thought,
                 action={"name": action.name, "arguments": action.arguments},
-                observation=result.observation,
+                observation=observation,
                 tool_success=result.success,
             )
             trace.steps.append(step)
