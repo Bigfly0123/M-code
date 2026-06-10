@@ -1,0 +1,884 @@
+{
+  "total": 100,
+  "success": 66,
+  "failure": 34,
+  "success_rate": 0.66,
+  "failure_types": {
+    "TEST_STILL_FAIL": 21,
+    "NO_EDIT": 11,
+    "PREMATURE_SUBMIT": 2
+  },
+  "bug_type_stats": {
+    "regex": {
+      "success": 4,
+      "fail": 8
+    },
+    "date_time": {
+      "success": 8,
+      "fail": 3
+    },
+    "nested_condition": {
+      "success": 8,
+      "fail": 3
+    },
+    "type_conversion": {
+      "success": 9,
+      "fail": 3
+    },
+    "list_mutation": {
+      "success": 6,
+      "fail": 2
+    },
+    "off_by_one": {
+      "success": 5,
+      "fail": 4
+    },
+    "default_arg": {
+      "success": 4,
+      "fail": 0
+    },
+    "boundary_empty": {
+      "success": 6,
+      "fail": 1
+    },
+    "multi_branch": {
+      "success": 2,
+      "fail": 1
+    },
+    "stateful_counter": {
+      "success": 3,
+      "fail": 0
+    },
+    "exception_handling": {
+      "success": 4,
+      "fail": 3
+    },
+    "multi_file": {
+      "success": 3,
+      "fail": 0
+    },
+    "string_norm": {
+      "success": 3,
+      "fail": 3
+    },
+    "config_parse": {
+      "success": 1,
+      "fail": 2
+    },
+    "path_norm": {
+      "success": 0,
+      "fail": 1
+    }
+  },
+  "difficulty_stats": {
+    "medium": {
+      "success": 45,
+      "fail": 27
+    },
+    "easy": {
+      "success": 15,
+      "fail": 7
+    },
+    "hard": {
+      "success": 6,
+      "fail": 0
+    }
+  },
+  "failures": [
+    {
+      "task_id": "bugfix_252",
+      "bug_type": "regex",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 6,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "phone_fmt.py",
+        "phone_fmt.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "read_file",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_259",
+      "bug_type": "exception_handling",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_262",
+      "bug_type": "string_norm",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_265",
+      "bug_type": "path_norm",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "path_join.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_266",
+      "bug_type": "config_parse",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 10,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": false,
+      "edited_files": [
+        "ini_parser.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "run_tests",
+        "run_tests",
+        "read_file",
+        "run_tests",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_269",
+      "bug_type": "type_conversion",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_270",
+      "bug_type": "regex",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "url_check.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_271",
+      "bug_type": "regex",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "hex_color.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_272",
+      "bug_type": "regex",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "ip_check.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_276",
+      "bug_type": "nested_condition",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_285",
+      "bug_type": "off_by_one",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_297",
+      "bug_type": "string_norm",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 5,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "csv_parser.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "read_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_301",
+      "bug_type": "regex",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "password_check.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_303",
+      "bug_type": "regex",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "file_ext.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_304",
+      "bug_type": "regex",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 5,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "markdown_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "read_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_306",
+      "bug_type": "date_time",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "countdown_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_307",
+      "bug_type": "date_time",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "month_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_309",
+      "bug_type": "date_time",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "timestamp_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_311",
+      "bug_type": "nested_condition",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 8,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "loan_calc.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_320",
+      "bug_type": "type_conversion",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "PREMATURE_SUBMIT",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": false,
+      "edited_files": [
+        "num_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_322",
+      "bug_type": "off_by_one",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 7,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "window_util.py",
+        "window_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_323",
+      "bug_type": "off_by_one",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "PREMATURE_SUBMIT",
+      "num_steps": 7,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": false,
+      "edited_files": [
+        "binary_search.py",
+        "binary_search.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "read_file",
+        "edit_file",
+        "read_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_324",
+      "bug_type": "exception_handling",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 10,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "json_patch.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "read_file",
+        "",
+        "read_file",
+        "read_file",
+        "",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_329",
+      "bug_type": "multi_branch",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_331",
+      "bug_type": "config_parse",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_333",
+      "bug_type": "boundary_empty",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "chunk_text.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_334",
+      "bug_type": "type_conversion",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 10,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "roman_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "edit_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_335",
+      "bug_type": "nested_condition",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_336",
+      "bug_type": "string_norm",
+      "difficulty": "easy",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_337",
+      "bug_type": "list_mutation",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "pair_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_339",
+      "bug_type": "exception_handling",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "read_file",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    },
+    {
+      "task_id": "bugfix_341",
+      "bug_type": "regex",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 6,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "isbn_check.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "run_tests",
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_345",
+      "bug_type": "list_mutation",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "TEST_STILL_FAIL",
+      "num_steps": 4,
+      "has_edit": true,
+      "has_run_tests": true,
+      "last_test_passed": true,
+      "edited_files": [
+        "sort_util.py"
+      ],
+      "action_sequence": [
+        "read_file",
+        "edit_file",
+        "run_tests",
+        "submit_patch"
+      ],
+      "candidate_dpo_type": "correct_patch_vs_wrong_patch"
+    },
+    {
+      "task_id": "bugfix_346",
+      "bug_type": "off_by_one",
+      "difficulty": "medium",
+      "success": false,
+      "failure_type": "NO_EDIT",
+      "num_steps": 10,
+      "has_edit": false,
+      "has_run_tests": false,
+      "last_test_passed": false,
+      "edited_files": [],
+      "action_sequence": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "candidate_dpo_type": "read_to_edit"
+    }
+  ]
+}

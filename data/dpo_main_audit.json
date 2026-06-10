@@ -1,0 +1,57 @@
+{
+  "total_pairs": 131,
+  "sources": {
+    "old_mimo_pairs": 45,
+    "patch_correctness": 33,
+    "new100_v21_vs_base": 49,
+    "new100_v21_vs_v2": 4
+  },
+  "unique_tasks": 131,
+  "heldout_leakage": 86,
+  "test_leakage": 0,
+  "failure_types": {
+    "TEST_STILL_FAIL": 45,
+    "FORMAT_ERROR": 9,
+    "PATCH_APPLY_ERROR": 1,
+    "NO_EDIT": 35,
+    "OTHER": 29,
+    "NO_TEST_AFTER_EDIT": 12
+  },
+  "bug_types": {
+    "none_handling": 7,
+    "dict_key": 4,
+    "csv_parsing": 3,
+    "type_conversion": 15,
+    "boundary_condition": 2,
+    "regex": 19,
+    "deduplication": 1,
+    "time_delta": 1,
+    "simple_algorithm": 3,
+    "off_by_one": 8,
+    "set_operations": 1,
+    "date_comparison": 1,
+    "unit_conversion": 1,
+    "path_handling": 1,
+    "argument_order": 2,
+    "input_validation": 2,
+    "string_split_join": 2,
+    "url_parsing": 1,
+    "exception_handling": 7,
+    "nested_condition": 11,
+    "string_norm": 6,
+    "date_time": 9,
+    "config_parse": 3,
+    "list_mutation": 7,
+    "boundary_empty": 5,
+    "multi_branch": 3,
+    "default_arg": 3,
+    "multi_file": 1,
+    "stateful_counter": 2
+  },
+  "pair_types": {
+    "same_task_mimo": 45,
+    "patch_correctness": 33,
+    "same_task_v21_vs_base": 49,
+    "same_task_v21_vs_v2": 4
+  }
+}
