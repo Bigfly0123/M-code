@@ -211,7 +211,7 @@ def main() -> int:
             logger.info("  %s | reward=%.2f | steps=%d | failure=%s", status, trace.reward, len(trace.steps), trace.failure_type)
 
     # Generate summary
-    summary = summarize_traces(traces)
+    summary = vars(summarize_traces(traces))
     summary["run_id"] = args.run_id
     summary["total_expected"] = total_expected
     summary["total_completed"] = total_completed
