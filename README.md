@@ -1,45 +1,33 @@
-# M-code / EvoCode-Agent
+# EvoCode-Agent
 
-An Orchard-inspired Coding Agent Post-training Framework with SFT, Read-to-Edit Transition Tuning, and Patch-Correctness Optimization.
+An Orchard-inspired Coding Agent Post-training Framework with SFT, Read-to-Edit Transition Tuning, and Patch-Correctness DPO.
 
 ## Key Results
 
-| Model | New50 (easy) | New100 (hard) |
-|---|---:|---:|
-| 3B Base | 46% | 21% |
-| 3B Step-SFT v2 | 54% | 31% |
-| 7B Base | 82% | 58% |
-| **3B v2.1-clean** | **98%** | **66%** |
+| Model | New50 (easy) | New100 (hard) | 200-task reference |
+|---|---:|---:|---:|
+| 3B Base | 46% | 21% | — |
+| 3B Step-SFT v2 | 54% | 31% | — |
+| 7B Base | 82% | 58% | — |
+| **3B v2.1-clean** | **98%** | **66%** | — |
+| DPO-v3-balanced | — | — | 68.0% |
 
-v2.1-clean surpasses 7B Base on both benchmarks through post-training alone.
+v2.1-clean is the main result. DPO-v3-balanced is the best DPO variant but shows diminishing returns.
 
 > Note: Results are on self-constructed toy/harder code-repair benchmarks, not SWE-bench.
-
-## What This Project Does
-
-Not a chatbot, not a RAG demo, not a pure paper reproduction. This is a complete Coding Agent post-training system:
-
-1. **Agent Runtime** -- structured tool calling (read_file, edit_file, run_tests, etc.)
-2. **Benchmark** -- 250 training tasks + 50 easy held-out + 100 harder held-out
-3. **Trajectory Logging** -- full thought-action-observation traces
-4. **Data Pipeline** -- step-level SFT, read-to-edit transition, DPO pair construction
-5. **Training** -- QLoRA SFT on 3B Coder model
-6. **Evaluation** -- success rate, NO_EDIT rate, loop rate, tool validity, per-bug-type analysis
-7. **Leakage Audit** -- explicit train/eval/held-out split verification
 
 ## Project Story
 
 ```
-trajectory-level SFT failed (36% < base 50%)
-  -> step-level SFT v2 rebuilt (54% held-out)
+trajectory-level SFT failed (36%)
+  -> step-level SFT v2 rebuilt (held-out 54%)
   -> failure analysis found NO_EDIT / read-file loop
   -> read-to-edit transition SFT v2.1
   -> data leakage audit + pipeline fix
   -> v2.1-clean: 98% New50, 66% New100
-  -> next: Patch-Correctness DPO
+  -> DPO branch: diminishing returns at 100-160 pairs
+  -> Next: Skill Self-Distillation
 ```
-
-This chain demonstrates: not blind score-chasing, but finding failures, auditing data, fixing pipelines, and re-verifying.
 
 ## System Architecture
 
@@ -49,64 +37,61 @@ evocode_orchard_lite/
   tools/          -- list_files, read_file, search_code, edit_file, run_tests, git_diff, submit_patch
   harness/        -- agent loop, action parser, prompt builder, progress guard
   trajectory/     -- trace logger
-  benchmark/      -- task builders (bugfix_001-350)
+  benchmark/      -- task builders (bugfix_001-400)
   data_builder/   -- SFT, r2e, DPO data construction
-  training/       -- QLoRA SFT training scripts
+  training/       -- QLoRA SFT and DPO training scripts
   eval/           -- metrics, failure analysis, held-out eval
+  docs/           -- project plans, results, audits
+  data/           -- training data, splits, DPO pairs
 ```
 
 ## Benchmark
 
-### Training Tasks (bugfix_001-200)
-200 code-repair tasks covering boundary_condition, type_conversion, dict_key, off_by_one, none_handling, regex, etc.
-
-### New50 Held-out (bugfix_201-250)
-50 easy-medium tasks for clean evaluation.
-
-### New100 Held-out (bugfix_251-350)
-100 harder tasks covering 15 bug types:
-regex, date_time, nested_condition, type_conversion, list_mutation, off_by_one, exception_handling, default_arg, boundary_empty, multi_branch, stateful_counter, path_norm, config_parse, string_norm, multi_file
-
-Difficulty: Easy 30%, Medium 50%, Hard 20%
+| Set | Tasks | Role |
+|---|---|---|
+| bugfix_001-200 | 200 | Training + teacher rollouts |
+| bugfix_201-250 (New50) | 50 | Easy held-out reference |
+| bugfix_251-350 (New100) | 100 | Harder held-out reference |
+| bugfix_351-400 | 50 | Contaminated reference (used for DPO) |
+| bugfix_401-450 | 50 | Clean independent eval (not yet built) |
 
 ## Training Pipeline
 
 ### Step-SFT v2
 - Base: Qwen2.5-Coder-3B-Instruct
-- Data: 4425 step-level samples from train split
-- Method: QLoRA 4-bit, LoRA r=16, alpha=32
+- 4425 step-level samples from train split
+- QLoRA 4-bit, LoRA r=16, alpha=32
 
 ### Step-SFT v2.1-clean
-- Base: v2 adapter (continued training)
-- Data: 3899 samples (3097 original + 802 clean read-to-edit)
-- Method: QLoRA, is_trainable=True
-- Key fix: completion appended to messages before apply_chat_template
+- Continued from v2 adapter
+- 3899 samples (3097 original + 802 clean read-to-edit)
+- is_trainable=True, lr=2e-5
 
-## Bugs Found and Fixed
+### DPO-v3-balanced
+- Continued from v2.1-clean
+- 146 balanced pairs (80 TEST_STILL_FAIL + 12 WRONG_PATCH + 10 NO_EDIT + 10 FORMAT_ERROR)
+- lr=1e-6, beta=0.1
 
-1. **LoRA nesting bug**: get_peft_model() on already-loaded PeftModel overwrites v2 weights with random initialization. Fixed with is_trainable=True + manual requires_grad.
+## Bugs Fixed
 
-2. **r2e data pipeline pollution**: build_read_to_edit_sft.py loaded all success traces without split filtering, mixing test/val/heldout tasks into training. Fixed with train-only filtering + provenance fields.
+1. **LoRA nesting** -- get_peft_model() on loaded PeftModel overwrites weights
+2. **r2e pipeline pollution** -- mixed test/val tasks into training data
+3. **Training format bug** -- completion not appended to messages before apply_chat_template
+4. **basic_tools.py path bug** -- relative_to() fails on relative workspace paths
 
-3. **Training format bug**: apply_chat_template(messages) did not include the completion (edit_file action). Model trained on empty targets. Fixed by appending completion as assistant message.
+## Documentation
 
-4. **basic_tools.py path bug**: path.relative_to(task.workspace) failed when workspace was relative. Fixed with task.workspace.resolve().
-
-## Limitations
-
-- Results are on self-constructed benchmarks, not SWE-bench or real-world repos
-- 3B model size limits reasoning on complex multi-file bugs
-- New100 harder tasks still show 34% failure, mostly TEST_STILL_FAIL (wrong patch)
-- No GRPO/RL yet -- planned for future work
+- [Final Project Report](docs/final_project_report.md)
+- [Phase 6 DPO Experiment Summary](docs/phase6_dpo_experiment_summary.md)
+- [v2.1-clean Results](docs/v21_clean_final_results.md)
+- [DPO Data Source Issues](docs/M-code_DPO数据来源问题与TeacherRollout补齐规划.md)
+- [Phase 6.3 Plan](docs/M-code_Phase6.3_Patch-Correctness数据补强与DPO-main-v2规划.md)
 
 ## Quick Start
 
 ```bash
 # Validate benchmark tasks
 python -m evocode_orchard_lite.benchmark.validate_tasks
-
-# Run smoke test
-python -m evocode_orchard_lite.run_smoke
 
 # Build SFT data
 python -m evocode_orchard_lite.data_builder.build_sft
@@ -117,13 +102,3 @@ python -m evocode_orchard_lite.data_builder.build_read_to_edit_sft_clean
 # Run evaluation
 python -m evocode_orchard_lite.eval.eval_heldout_fixed
 ```
-
-## Documentation
-
-- [Final Results Report](docs/v21_clean_final_results.md)
-- [Phase 5 Validation Plan](docs/M-code_Phase5_v21-clean泛化验证与最终结果固化规划.md)
-- [Phase 6 DPO Plan](docs/M-code_Phase6_Patch-Correctness-DPO与项目固化规划.md)
-- [v2 Stage Diagnosis](docs/M-code_Step-SFT-v2阶段判断与下一步建议.md)
-- [NO_EDIT Fix Plan](docs/M-code_NO_EDIT专项修复规划.md)
-- [Data Pipeline Fix Plan](docs/M-code_v21-clean数据管线修复与复验方案.md)
-- [mini-swe-agent Study Notes](docs/mini-swe-agent学习笔记.md)

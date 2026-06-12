@@ -2,7 +2,7 @@
 
 Sources:
 1. new100: mimo success vs model failure (same task)
-2. 351-400: mimo success vs scripted fix (independent tasks)
+2. 351-400: mimo success vs scripted fix (contaminated reference, not clean independent)
 3. Existing DPO pairs (120)
 """
 import json
