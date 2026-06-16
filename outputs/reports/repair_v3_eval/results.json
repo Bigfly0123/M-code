@@ -1,0 +1,495 @@
+{
+  "total": 100,
+  "first_pass_success": 66,
+  "repair_success": 8,
+  "forced_edit_success": 2,
+  "final_success": 76,
+  "final_rate": 0.76,
+  "failure_first": {
+    "NO_EDIT": 11,
+    "TEST_STILL_FAIL": 3,
+    "OTHER": 20
+  },
+  "failure_repair": {
+    "NO_EDIT": 8,
+    "TEST_STILL_FAIL": 2,
+    "OTHER": 14
+  },
+  "details": [
+    {
+      "task_id": "bugfix_251",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_252",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER"
+    },
+    {
+      "task_id": "bugfix_253",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_254",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_255",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_256",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_257",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_258",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_259",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_260",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_261",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_262",
+      "result": "fail",
+      "ft_first": "NO_EDIT",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_263",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_264",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_265",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_266",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "ft_repair": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_267",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_268",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_269",
+      "result": "fail",
+      "ft_first": "NO_EDIT",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_270",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_271",
+      "result": "forced_edit_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_272",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER"
+    },
+    {
+      "task_id": "bugfix_273",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_274",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_275",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_276",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_277",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_278",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_279",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_280",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_281",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_282",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_283",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_284",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_285",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_286",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_287",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_288",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_289",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_290",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_291",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_292",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_293",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_294",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_295",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_296",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_297",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_298",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_299",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_300",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_301",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_302",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_303",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_304",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_305",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_306",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_307",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_308",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_309",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_310",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_311",
+      "result": "repair_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_312",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_313",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_314",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_315",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_316",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_317",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_318",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_319",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_320",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "ft_repair": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_321",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_322",
+      "result": "repair_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_323",
+      "result": "fail",
+      "ft_first": "TEST_STILL_FAIL",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_324",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER"
+    },
+    {
+      "task_id": "bugfix_325",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_326",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_327",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_328",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_329",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_330",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_331",
+      "result": "fail",
+      "ft_first": "NO_EDIT",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_332",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_333",
+      "result": "repair_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_334",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_335",
+      "result": "fail",
+      "ft_first": "NO_EDIT",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_336",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT"
+    },
+    {
+      "task_id": "bugfix_337",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_338",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_339",
+      "result": "repair_fail",
+      "failure_type": "NO_EDIT",
+      "ft_repair": "OTHER"
+    },
+    {
+      "task_id": "bugfix_340",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_341",
+      "result": "forced_edit_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_342",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_343",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_344",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_345",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER"
+    },
+    {
+      "task_id": "bugfix_346",
+      "result": "repair_fail",
+      "failure_type": "NO_EDIT",
+      "ft_repair": "OTHER"
+    },
+    {
+      "task_id": "bugfix_347",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_348",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_349",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_350",
+      "result": "first_pass_ok"
+    }
+  ]
+}
