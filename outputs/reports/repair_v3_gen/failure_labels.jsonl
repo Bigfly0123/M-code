@@ -1,0 +1,30 @@
+{"task_id": "bugfix_352", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "Model edited but did not handle None/empty input"}
+{"task_id": "bugfix_353", "first_pass": "OTHER", "final": "FORCED_OK", "sub_type": "PATCH_WRONG_LOGIC", "reason": "Model edited but logic wrong for reversed bounds. Fixed via forced_edit"}
+{"task_id": "bugfix_354", "first_pass": "OTHER", "final": "OTHER", "sub_type": "INSUFFICIENT_IMPLEMENTATION", "reason": "from_roman not implemented, to_roman stub"}
+{"task_id": "bugfix_356", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "Multiple functions with incomplete fixes"}
+{"task_id": "bugfix_359", "first_pass": "OTHER", "final": "OTHER", "sub_type": "TOO_COMPLEX_FOR_MODEL", "reason": "LRU cache semantics requires data structure understanding"}
+{"task_id": "bugfix_365", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not edit safe_loads/safe_dumps"}
+{"task_id": "bugfix_372", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not edit parse_properties"}
+{"task_id": "bugfix_373", "first_pass": "TEST_STILL_FAIL", "final": "REPAIR_OK", "sub_type": "PATCH_WRONG_LOGIC", "reason": "Pluralize English irregulars. Fixed via repair"}
+{"task_id": "bugfix_374", "first_pass": "NO_EDIT", "final": "OTHER", "sub_type": "NO_EDIT", "reason": "Model did not edit unique_by_key, then wrong edit in repair"}
+{"task_id": "bugfix_375", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not edit parse_csv_simple"}
+{"task_id": "bugfix_377", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not implement off/once for event emitter"}
+{"task_id": "bugfix_378", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not edit retry error handling"}
+{"task_id": "bugfix_381", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "Fibonacci off-by-one, model edited but logic wrong"}
+{"task_id": "bugfix_382", "first_pass": "TEST_STILL_FAIL", "final": "TEST_STILL_FAIL", "sub_type": "TOO_COMPLEX_FOR_MODEL", "reason": "LRU eviction semantics, model cannot fix"}
+{"task_id": "bugfix_383", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not add None guard"}
+{"task_id": "bugfix_384", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not fix rotate_right direction"}
+{"task_id": "bugfix_385", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "topological_sort not implemented"}
+{"task_id": "bugfix_386", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "parse_bool short forms and whitespace not handled"}
+{"task_id": "bugfix_387", "first_pass": "OTHER", "final": "OTHER", "sub_type": "INSUFFICIENT_IMPLEMENTATION", "reason": "determinant only 2x2, matrix_multiply no validation"}
+{"task_id": "bugfix_388", "first_pass": "OTHER", "final": "OTHER", "sub_type": "TOO_COMPLEX_FOR_MODEL", "reason": "BST delete and insert duplicate handling"}
+{"task_id": "bugfix_389", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "wrap_text long word handling"}
+{"task_id": "bugfix_390", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "hex_to_rgb 3-digit and lighten function"}
+{"task_id": "bugfix_391", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not implement weight-based shipping"}
+{"task_id": "bugfix_392", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Model did not replace eval() with safe AST"}
+{"task_id": "bugfix_395", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "RingBuffer validation not implemented"}
+{"task_id": "bugfix_396", "first_pass": "OTHER", "final": "OTHER", "sub_type": "PATCH_WRONG_LOGIC", "reason": "URL encoding and key-only params in query string"}
+{"task_id": "bugfix_397", "first_pass": "TEST_STILL_FAIL", "final": "TEST_STILL_FAIL", "sub_type": "TOO_COMPLEX_FOR_MODEL", "reason": "State machine history tracking, too complex"}
+{"task_id": "bugfix_398", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "mask_email edge case not implemented"}
+{"task_id": "bugfix_399", "first_pass": "NO_EDIT", "final": "NO_TEST_AFTER_EDIT", "sub_type": "INSUFFICIENT_IMPLEMENTATION", "reason": "redo/can_redo not implemented"}
+{"task_id": "bugfix_400", "first_pass": "NO_EDIT", "final": "NO_EDIT", "sub_type": "NO_EDIT", "reason": "Expression evaluator with precedence not implemented"}
