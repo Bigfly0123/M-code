@@ -1,0 +1,348 @@
+{
+  "total": 50,
+  "first_pass_success": 17,
+  "repair_success": 5,
+  "forced_edit_success": 0,
+  "final_success": 22,
+  "final_rate": 0.44,
+  "failure_first": {
+    "NO_EDIT": 10,
+    "TEST_STILL_FAIL": 3,
+    "OTHER": 20
+  },
+  "failure_repair": {
+    "NO_EDIT": 9,
+    "TEST_STILL_FAIL": 3,
+    "OTHER": 16
+  },
+  "details": [
+    {
+      "task_id": "bugfix_351",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_352",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_353",
+      "result": "repair_ok",
+      "failure_type": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_354",
+      "result": "fail",
+      "ft_first": "NO_EDIT",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_355",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_356",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_357",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_358",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_359",
+      "result": "repair_fail",
+      "failure_type": "NO_EDIT",
+      "ft_repair": "TEST_STILL_FAIL",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_360",
+      "result": "repair_fail",
+      "failure_type": "NO_EDIT",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_361",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_362",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_363",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_364",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_365",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_366",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_367",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_368",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_369",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_370",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_371",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_372",
+      "result": "fail",
+      "ft_first": "NO_EDIT",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_373",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_374",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "TEST_STILL_FAIL",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_375",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_376",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_377",
+      "result": "repair_fail",
+      "failure_type": "NO_EDIT",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_378",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_379",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_380",
+      "result": "repair_fail",
+      "failure_type": "NO_EDIT",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_381",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_382",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_383",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_384",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_385",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_386",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_387",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_388",
+      "result": "fail",
+      "ft_first": "TEST_STILL_FAIL",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_389",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_390",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_391",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_392",
+      "result": "repair_ok",
+      "failure_type": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_393",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_394",
+      "result": "first_pass_ok",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_395",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_396",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_397",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "ft_repair": "TEST_STILL_FAIL",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_398",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_399",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "ft_repair": "OTHER",
+      "planner": true
+    },
+    {
+      "task_id": "bugfix_400",
+      "result": "fail",
+      "ft_first": "OTHER",
+      "ft_repair": "NO_EDIT",
+      "ft_forced": "NO_EDIT",
+      "planner": true
+    }
+  ]
+}
