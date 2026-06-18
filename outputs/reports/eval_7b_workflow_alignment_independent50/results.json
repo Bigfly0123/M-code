@@ -1,0 +1,286 @@
+{
+  "model": "7b_workflow_alignment",
+  "base_model": "/mnt/disk/mxf/models/Qwen2.5-Coder-7B-Instruct",
+  "adapter_path": "outputs/models/7b_workflow_alignment",
+  "tasks": 50,
+  "task_range": [
+    351,
+    400
+  ],
+  "hard_guard": true,
+  "repair": true,
+  "first_pass_success": 20,
+  "repair_success": 3,
+  "final_success": 23,
+  "first_pass_rate": 0.4,
+  "final_rate": 0.46,
+  "failure_first": {
+    "NO_TEST_AFTER_EDIT": 5,
+    "OTHER": 14,
+    "TEST_STILL_FAIL": 11
+  },
+  "failure_final": {
+    "NO_TEST_AFTER_EDIT": 8,
+    "OTHER": 12,
+    "TEST_STILL_FAIL": 7
+  },
+  "details": [
+    {
+      "task_id": "bugfix_351",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_352",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_353",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_354",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_355",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_356",
+      "result": "repair_fail",
+      "failure_type": "NO_TEST_AFTER_EDIT",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_357",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_358",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_359",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_360",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_361",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_362",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_363",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_364",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_365",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_366",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_367",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_368",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_369",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_370",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_371",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_372",
+      "result": "repair_fail",
+      "failure_type": "NO_TEST_AFTER_EDIT",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_373",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_374",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_375",
+      "result": "repair_fail",
+      "failure_type": "NO_TEST_AFTER_EDIT",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_376",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_377",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_378",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_379",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_380",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_381",
+      "result": "repair_ok",
+      "failure_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_382",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_383",
+      "result": "repair_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_384",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_385",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_386",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_387",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_388",
+      "result": "first_pass_ok"
+    },
+    {
+      "task_id": "bugfix_389",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_390",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_391",
+      "result": "repair_fail",
+      "failure_type": "NO_TEST_AFTER_EDIT",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_392",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_393",
+      "result": "repair_fail",
+      "failure_type": "NO_TEST_AFTER_EDIT",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_394",
+      "result": "repair_ok",
+      "failure_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_395",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "TEST_STILL_FAIL"
+    },
+    {
+      "task_id": "bugfix_396",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_397",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_398",
+      "result": "repair_fail",
+      "failure_type": "OTHER",
+      "final_type": "OTHER"
+    },
+    {
+      "task_id": "bugfix_399",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    },
+    {
+      "task_id": "bugfix_400",
+      "result": "repair_fail",
+      "failure_type": "TEST_STILL_FAIL",
+      "final_type": "NO_TEST_AFTER_EDIT"
+    }
+  ]
+}
